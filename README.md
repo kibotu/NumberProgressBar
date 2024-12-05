@@ -39,8 +39,7 @@ Use it in your own code:
 <com.daimajia.numberprogressbar.NumberProgressBar
     android:id="@+id/number_progress_bar"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-/>
+    android:layout_height="wrap_content"/>
 ```
 
 I made some predesign style. You can use them via `style` property.
@@ -53,8 +52,7 @@ Use the preset style just like below:
 ```xml
 <com.daimajia.numberprogressbar.NumberProgressBar
     android:id="@+id/number_progress_bar"
-    style="@style/NumberProgressBar_Default"
-/>
+    style="@style/NumberProgressBar_Default"/>
 ```
 
 In the above picture, the style is : 
@@ -114,8 +112,7 @@ for example, the default style:
     custom:progress_text_visibility="visible"
     
     custom:progress_max="100"
-    custom:progress_current="80"
- />
+    custom:progress_current="80"/>
 ```
 
 # License
