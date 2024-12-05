@@ -9,11 +9,7 @@ The NumberProgressBar is a bar, slim and sexy (every man wants! ).
 
 ### Demo
 
-![NumberProgressBar](http://ww3.sinaimg.cn/mw690/610dc034jw1efyrd8n7i7g20cz02mq5f.gif)
-
-
-[Download Demo](https://github.com/daimajia/NumberProgressBar/releases/download/v1.0/NumberProgressBar-Demo-v1.0.apk)
-
+![NumberProgressBar](doc/demo.gif)
 
 ### Usage
 ----
