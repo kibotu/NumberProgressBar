@@ -1,25 +1,94 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    namespace "com.daimajia.numberprogressbar.example"
+    compileSdk compileSdkVer
+    buildToolsVersion = buildToolsVer
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.daimajia.numberprogressbar.example"
+        minSdk minSdkVer
+        targetSdk targetSdkVer
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled true
-            consumerProguardFiles 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // region lint options
+
+    lint {
+        disable 'TypographyFractions', 'TypographyQuotes', 'InvalidPackage'
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        checkOnly 'NewApi', 'InlinedApi'
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        checkDependencies true
+        ignoreTestSources true
+        checkAllWarnings false
+    }
+
+    // endregion
+
+    // region java compile options
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // endregion
+
+    // region kotlin compile options
+
+    kotlinOptions {
+        jvmTarget = "17"
+        allWarningsAsErrors = false
+        kotlinOptions.verbose = true
+
+        //## Hint: https://kotlinlang.org/docs/reference/java-to-kotlin-interop.html#default-methods-in-interfaces
+        //## Hint: "-Xjvm-default=all-compatibility" and "-Xjvm-default=all-compatibility" will also work.
+        freeCompilerArgs += [
+                "-Xjvm-default=all-compatibility",
+                // disable linting for opt-in annotations
+                "-opt-in=kotlin.RequiresOptIn"
+        ]
+    }
+
+    // endregion
+
+    // region exclude duplicated meta inf files
+
+    packagingOptions {
+        // DebugProbesKt.bin is used for java debugging (not needed for android)
+        // Hint: https://github.com/Kotlin/kotlinx.coroutines/issues/2274
+        exclude 'DebugProbesKt.bin'
+
+        excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        // https://stackoverflow.com/a/61893957/1006741
+        excludes -= "/META-INF/*.kotlin_module"
+    }
+
+    // endregion
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile project(':library')
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    testImplementation 'junit:junit:4.13.2'
+    implementation project(':library')
 }
