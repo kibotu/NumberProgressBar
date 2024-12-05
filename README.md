@@ -36,12 +36,12 @@ dependencies {
 Use it in your own code:
 
 ```xml
-	<com.daimajia.numberprogressbar.NumberProgressBar
-		android:id="@+id/number_progress_bar"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-	/>
-```	
+<com.daimajia.numberprogressbar.NumberProgressBar
+    android:id="@+id/number_progress_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+/>
+```
 
 I made some predesign style. You can use them via `style` property.
 
@@ -51,11 +51,11 @@ I made some predesign style. You can use them via `style` property.
 Use the preset style just like below:
 
 ```xml
-	<com.daimajia.numberprogressbar.NumberProgressBar
-		android:id="@+id/number_progress_bar"
-		style="@style/NumberProgressBar_Default"
-	/>
-```	
+<com.daimajia.numberprogressbar.NumberProgressBar
+    android:id="@+id/number_progress_bar"
+    style="@style/NumberProgressBar_Default"
+/>
+```
 
 In the above picture, the style is : 
 
@@ -98,24 +98,24 @@ The **bar**:
 for example, the default style:
 
 ```xml
-	<com.daimajia.numberprogressbar.NumberProgressBar
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        
-	        custom:progress_unreached_color="#CCCCCC"
-	        custom:progress_reached_color="#3498DB"
-	        
-	        custom:progress_unreached_bar_height="0.75dp"
-	        custom:progress_reached_bar_height="1.5dp"
-	        
-	        custom:progress_text_size="10sp"
-	        custom:progress_text_color="#3498DB"
-	        custom:progress_text_offset="1dp"
-	        custom:progress_text_visibility="visible"
-	        
-	        custom:progress_max="100"
-	        custom:progress_current="80"
-	         />
+<com.daimajia.numberprogressbar.NumberProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    
+    custom:progress_unreached_color="#CCCCCC"
+    custom:progress_reached_color="#3498DB"
+    
+    custom:progress_unreached_bar_height="0.75dp"
+    custom:progress_reached_bar_height="1.5dp"
+    
+    custom:progress_text_size="10sp"
+    custom:progress_text_color="#3498DB"
+    custom:progress_text_offset="1dp"
+    custom:progress_text_visibility="visible"
+    
+    custom:progress_max="100"
+    custom:progress_current="80"
+ />
 ```
 
 # License
