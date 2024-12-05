@@ -1,19 +1,9 @@
-## Android NumberProgressBar [![Build Status](https://travis-ci.org/daimajia/NumberProgressBar.png?branch=master)](https://travis-ci.org/daimajia/NumberProgressBar)
+## Android NumberProgressBar [![Android CI](https://github.com/kibotu/NumberProgressBar/actions/workflows/android.yml/badge.svg)](https://github.com/kibotu/NumberProgressBar/actions/workflows/android.yml) [![](https://jitpack.io/v/kibotu/NumberProgressBar.svg)](https://jitpack.io/#kibotu/NumberProgressBar) [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21) [![Gradle Version](https://img.shields.io/badge/gradle-8.1.1-green.svg)](https://docs.gradle.org/current/release-notes) [![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-green.svg)](https://kotlinlang.org/)
 
-[![Insight.io](https://insight.io/repoBadge/github.com/daimajia/NumberProgressBar)](https://insight.io/github.com/daimajia/NumberProgressBar)
+
 -----
 
 The NumberProgressBar is a bar, slim and sexy (every man wants! ). 
-
-I decided to do this because I was really tired of android original progress bar. So, I made some change, added more color style for this.
-
-And also you can contribute more color style, or new idea to me.
-
-BTW. My friends also made some other platform's NumberProgressBar：
-
-- [Web-Front](https://github.com/kalasoo/NumberProgressBar) by [kalasoo](https://github.com/kalasoo/NumberProgressBar)
-- [iOS](https://github.com/Ming-Zhe/NumberProgressBar) by [Ming-Zhe](https://github.com/Ming-Zhe/NumberProgressBar)
-- [Windows Phone](https://github.com/s2003zy/NumberProgressBar) by [s2003zy](https://github.com/s2003zy)
 
 ---
 
@@ -31,25 +21,21 @@ BTW. My friends also made some other platform's NumberProgressBar：
 #### Gradle
 
 ```groovy
-dependencies {
-   compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
 }
-```
-
-#### Maven 
-
-```xml
-<dependency>
-    <groupId>com.daimajia.numberprogressbar</groupId>
-    <artifactId>library</artifactId>
-    <version>1.4</version>
-    <type>apklib</type>
-</dependency>
+dependencies {
+    implementation 'com.github.kibotu:NumberProgressBar:Tag'
+}
 ```
 
 Use it in your own code:
 
-```java
+```xml
 	<com.daimajia.numberprogressbar.NumberProgressBar
 		android:id="@+id/number_progress_bar"
 		android:layout_width="wrap_content"
@@ -64,7 +50,7 @@ I made some predesign style. You can use them via `style` property.
 
 Use the preset style just like below:
 
-```java
+```xml
 	<com.daimajia.numberprogressbar.NumberProgressBar
 		android:id="@+id/number_progress_bar"
 		style="@style/NumberProgressBar_Default"
@@ -86,17 +72,11 @@ You can get more beautiful color from [kular](https://kuler.adobe.com), and you 
 
 ### Build
 
-run `./gradlew assembleDebug` (Mac/Linux)
-
-or
-
-run `gradlew.bat assembleDebug` (Windows)
+```sh
+`./gradlew clean build` 
+```
 
 ### Attributes
-
-There are several attributes you can set:
-
-![](http://ww2.sinaimg.cn/mw690/610dc034jw1efyttukr1zj20eg04bmx9.jpg)
 
 The **reached area** and **unreached area**:
 
@@ -117,7 +97,7 @@ The **bar**:
 
 for example, the default style:
 
-```java
+```xml
 	<com.daimajia.numberprogressbar.NumberProgressBar
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -138,8 +118,19 @@ for example, the default style:
 	         />
 ```
 
-### About me:
+# License
+```
+Copyright Jan Rabe 2024
 
-A student in China mainland, I like Google, like Android, like open source, like doing something interesting. :)
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-If you have some new idea or internship opportunity, please [email me](mailto:daimajia@gmail.com) !
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
